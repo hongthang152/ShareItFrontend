@@ -1,0 +1,19 @@
+kind: Service
+apiVersion: v1
+metadata:
+  name: ${_PROJECT_NAME}
+  labels:
+    run: ${_PROJECT_NAME}
+spec:
+  selector:
+    run: ${_PROJECT_NAME}
+  type: NodePort
+  ports:
+  - name: http
+    protocol: TCP
+    port: 80
+    targetPort: ${_CONTAINER_PORT}
+  - name: https
+    protocol: TCP
+    port: 443
+    targetPort: ${_CONTAINER_PORT}

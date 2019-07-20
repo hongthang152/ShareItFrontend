@@ -1,0 +1,51 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    run: ${_PROJECT_NAME}
+  name: ${_PROJECT_NAME}
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      run: ${_PROJECT_NAME}
+  template:
+    metadata:
+      labels:
+        run: ${_PROJECT_NAME}
+    spec:
+      containers:
+      - image: gcr.io/${PROJECT_ID}/${_PROJECT_NAME}:${SHORT_SHA}
+        name: web
+        ports:
+        - containerPort: ${_CONTAINER_PORT}
+        livenessProbe:
+          httpGet:
+            path: /
+            port: ${_CONTAINER_PORT}
+        # env:
+        # - name: AZURE_STORAGE_ACCESS_KEY
+        #   valueFrom:
+        #     configMapKeyRef:
+        #       name: azure-credential
+        #       key: AZURE_STORAGE_ACCESS_KEY
+        # - name: AZURE_STORAGE_ACCOUNT
+        #   valueFrom:
+        #     configMapKeyRef:
+        #       name: azure-credential
+        #       key: AZURE_STORAGE_ACCOUNT
+        # - name: CONTAINER_NAME
+        #   valueFrom:
+        #     configMapKeyRef:
+        #       name: azure-credential
+        #       key: CONTAINER_NAME
+        # - name: FRONTEND_URL
+        #   valueFrom:
+        #     configMapKeyRef:
+        #       name: environment-variables
+        #       key: FRONTEND_URL
+        # - name: MONGO_URL
+        #   valueFrom:
+        #     configMapKeyRef:
+        #       name: environment-variables
+        #       key: MONGO_URL

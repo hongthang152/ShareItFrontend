@@ -3,16 +3,12 @@
         background-color: #45a3e5
     }
 
-    30% {
+    33% {
         background-color: #66bf39
     }
 
-    60% {
+    66% {
         background-color: #eb670f
-    }
-
-    90% {
-        background-color: #f35
     }
 
     100% {
@@ -43,7 +39,7 @@
     width: 300px;
 }
 
-#pin-form {
+.pin-form {
     font-size: 20px;
     font-family: montserrat,"helvetica neue",helvetica,arial,sans-serif;
     font-weight: 700;
@@ -54,9 +50,25 @@
     border-radius: 0;
 }
 
-#pin-form:focus {
+.pin-form:focus {
     box-shadow: none;
     border: .125rem solid #333;
+    // animation: shake 0.82s cubic-bezier(.36,.07,.19,.97) both;
+    // transform: translate3d(0, 0, 0);
+    // backface-visibility: hidden;
+    // perspective: 1000px;
+}
+
+.pin-form-shake {
+    animation: shake 0.82s cubic-bezier(.36,.07,.19,.97) both;
+    transform: translate3d(0, 0, 0);
+    backface-visibility: hidden;
+    perspective: 1000px;
+}
+
+.pin-form-error {
+    border-color: rgb(255, 51, 85);
+    border-width: 0.125rem;
 }
 
 .button {
@@ -88,6 +100,11 @@
     background-color: blueviolet;
 }
 
+.share-button-disabled {
+    opacity: 0.6;
+    pointer-events: none;
+}
+
 .thematic-break {
     border: none;
     border-top: 3px solid #333;
@@ -98,7 +115,6 @@
     margin-top: 10px;
     margin-bottom: 0;
     width: 300px;
-    // content: 'Hello';
 }
 
 .or {
@@ -106,21 +122,9 @@
     font-size: 20px;
 }
 
-// .thematic-break::after {
-//     content: 'Hello';
-// }
-
-// .thematic-break:after {
-//     background:inherit;
-//     content: 'OR';
-//     padding: 0 4px;
-//     position: relative;
-//     top: -13px;
-// }
-
 .or:after,
 .or:before{
-    content:"\00a0\00a0\00a0\00a0\00a0\00a0\00a0\00a0\00a0\00a0\00a0\00a0\00a0\00a0\00a0\00a0\00a0\00a0\00a0\00a0\00a0\00a0\00a0\00a0";
+    content:"\00a0\00a0\00a0\00a0\00a0\00a0\00a0\00a0\00a0\00a0\00a0\00a0\00a0\00a0\00a0\00a0\00a0\00a0\00a0\00a0\00a0\00a0";
     text-decoration:line-through;
 }
 
@@ -144,6 +148,7 @@
     width: 300px;
     text-align: center;
     font-family: montserrat,"helvetica neue",helvetica,arial,sans-serif;
+    cursor: pointer;
 }
 
 .input-container {
@@ -177,3 +182,51 @@
 .share-it-row {
     margin-top: 10px
 }
+
+.footer-message {
+    position: absolute;
+    z-index: 1001;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgb(255, 51, 85);
+    overflow: hidden;
+    color: #fff;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    display: flex;
+    align-items: center;
+    transition: all 0.2s linear;
+}
+
+.exclamation-mark {
+    width: 35px;
+    flex-shrink: 0;
+}
+
+.check-mark {
+    font-size: 20px; 
+    padding-right: 5px
+}
+
+.footer-message-text {
+    word-break: break-all;
+}
+
+@keyframes shake {
+    10%, 90% {
+      transform: translate3d(-1px, 0, 0);
+    }
+    
+    20%, 80% {
+      transform: translate3d(2px, 0, 0);
+    }
+  
+    30%, 50%, 70% {
+      transform: translate3d(-4px, 0, 0);
+    }
+  
+    40%, 60% {
+      transform: translate3d(4px, 0, 0);
+    }
+  }

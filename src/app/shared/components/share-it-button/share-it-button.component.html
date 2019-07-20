@@ -1,1 +1,6 @@
-<button type="submit" class="button share-button">Share It!</button>
+<button type="submit" 
+    class="button share-button"
+    [ngClass]="isDisabled && 'share-button-disabled'"
+    (click)="onClick.emit($event)">
+    Share It!
+</button>

@@ -1,19 +1,22 @@
-import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-
-import { HomeRoutingModule } from './home-routing.module';
+import { NgModule } from '@angular/core';
+import { SharedModule } from 'app/shared/shared.module';
+import { DeviceDetectorModule } from 'ngx-device-detector';
+import { HomeComponent } from './components/home/home.component';
 import { MainComponent } from './components/main/main.component';
-import { AppModule } from 'src/app/app.module';
-import { SharedModule } from 'src/app/shared/shared.module';
+import { HomeRoutingModule } from './home-routing.module';
+
 
 @NgModule({
   declarations: [
-    MainComponent
+    MainComponent,
+    HomeComponent
   ],
   imports: [
     CommonModule,
     HomeRoutingModule,
-    SharedModule
+    SharedModule,
+    DeviceDetectorModule
   ],
   exports: [
     MainComponent

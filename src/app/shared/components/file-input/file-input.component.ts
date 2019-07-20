@@ -1,15 +1,18 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter, Input } from '@angular/core';
 
 @Component({
   selector: 'app-file-input',
   templateUrl: './file-input.component.html',
-  styleUrls: ['../../../app.component.scss', './file-input.component.sass']
+  styleUrls: ['./file-input.component.scss']
 })
 export class FileInputComponent implements OnInit {
+  @Output()
+  private onFileSelect: any = new EventEmitter();
+  @Input()
+  label: string = 'Choose a file ...';
 
   constructor() { }
 
-  ngOnInit() {
-  }
+  ngOnInit() {}
 
 }

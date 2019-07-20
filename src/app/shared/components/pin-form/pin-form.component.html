@@ -1,1 +1,5 @@
-<input type="tel" class="form-control" id="pin-form">
+<input type="tel" 
+    class="form-control pin-form"
+    [ngClass]="additionalClass"
+    (keyup)="onValueChange.emit($event)"
+    placeholder="File PIN">

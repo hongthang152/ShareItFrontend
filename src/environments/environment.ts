@@ -3,7 +3,9 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  BACKEND_URL: 'http://localhost:8000',
+  MAX_FILE_SIZE: 10000000
 };
 
 /*

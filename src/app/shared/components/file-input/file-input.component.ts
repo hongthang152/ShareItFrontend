@@ -7,7 +7,7 @@ import { Component, OnInit, Output, EventEmitter, Input } from '@angular/core';
 })
 export class FileInputComponent implements OnInit {
   @Output()
-  private onFileSelect: any = new EventEmitter();
+  public onFileSelect: any = new EventEmitter();
   @Input()
   label: string = 'Choose a file ...';
 

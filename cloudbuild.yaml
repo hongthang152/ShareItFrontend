@@ -19,7 +19,7 @@ steps:
       && rm -rf /var/lib/apt/lists/*
       for filename in ./k8s/*.yml; do
           envsubst < "${filename}" > "${filename}.tmp" && mv ${filename}.tmp ${filename}
-      done
+      done 
   env:
   - '_PROJECT_NAME=${_PROJECT_NAME}'
   - 'PROJECT_ID=${PROJECT_ID}'

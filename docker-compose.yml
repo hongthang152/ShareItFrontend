@@ -1,6 +1,4 @@
 version: '3'
 services:
   web:
-    ports:
-     - "4200:4200"
-    image: shareit.azurecr.io/share-it-frontend:latest
+    build: .

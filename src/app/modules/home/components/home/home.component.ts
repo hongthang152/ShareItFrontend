@@ -40,7 +40,7 @@ export class HomeComponent implements OnInit {
     if(!this.pin) {
       this.pinformService.shakeInput();
       this.footerMessageService.showErrorMessage(
-        "Please enter your file PIN",
+        "Please enter your file ID",
         3000
       )
       return 
@@ -67,7 +67,7 @@ export class HomeComponent implements OnInit {
   upload() {
     if (!this.file || !this.pin) {
       let errorMsg = !this.file ?
-       "Please upload your file" : "Please enter your file PIN before upload your file";
+       "Please upload your file" : "Please enter your file ID before upload your file";
       this.footerMessageService.showErrorMessage(
         errorMsg,
         3000
@@ -93,7 +93,7 @@ export class HomeComponent implements OnInit {
         finalize(() => this.loaderService.hideLoader())
       )
       .subscribe(() => {
-        let message = this.deviceService.isMobile() ? `Your file has been uploaded with this PIN: ${this.pin}` :  `Your file has been uploaded with this PIN number: ${this.pin}. Please be aware that your file will be removed within 1 week.`
+        let message = this.deviceService.isMobile() ? `Your file has been uploaded with this ID: ${this.pin}` :  `Your file has been uploaded with this ID number: ${this.pin}. Please be aware that your file will be removed within 1 week.`
         this.footerMessageService.showSuccessMessage(message,10000)
       }, 
       err => this.footerMessageService.showErrorMessage(

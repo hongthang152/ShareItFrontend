@@ -18,6 +18,7 @@
 
 .container {
     // margin-top: 50px;
+    margin-bottom: 8%;
 }
 .center-block {
     // background: url(src/assets/Kahoot_Logo.svg);
@@ -211,6 +212,14 @@
 
 .footer-message-text {
     word-break: break-all;
+}
+
+.donate-section {
+    color: #fff; 
+}
+
+.patreon {
+    font-weight: 700;
 }
 
 @keyframes shake {

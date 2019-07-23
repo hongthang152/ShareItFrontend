@@ -18,7 +18,8 @@
 
 .container {
     // margin-top: 50px;
-    margin-bottom: 8%;
+    // margin-bottom: 8%;
+    height: 100%;
 }
 .center-block {
     // background: url(src/assets/Kahoot_Logo.svg);
@@ -28,8 +29,8 @@
 }
 
 .logo-container {
-    padding-top: 4.25rem;
-    margin-top: 8%;
+    // padding-top: 4.25rem;
+    // margin-top: 8%;
 }
 
 .form-container {
@@ -216,6 +217,7 @@
 
 .donate-section {
     color: #fff; 
+    margin-bottom: 10px;
 }
 
 .patreon {
@@ -223,6 +225,13 @@
     color: #fff;
     text-decoration: none;
 }
+
+.home-container {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
 
 @keyframes shake {
     10%, 90% {

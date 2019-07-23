@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, HostBinding } from '@angular/core';
 import { FileService } from 'app/shared/services/file.service';
 import { FooterMessageService } from 'app/shared/services/footer-message.service';
 import { LoaderService } from 'app/shared/services/loader.service';
@@ -10,10 +10,9 @@ import { DeviceDetectorService } from 'ngx-device-detector';
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
-  styleUrls: ['./home.component.scss']
+  styleUrls: ['./home.component.scss'],
 })
 export class HomeComponent implements OnInit {
-
   constructor(
     private footerMessageService: FooterMessageService,
     private loaderService: LoaderService,

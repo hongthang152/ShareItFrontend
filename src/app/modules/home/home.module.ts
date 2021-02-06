@@ -16,7 +16,7 @@ import { HomeRoutingModule } from './home-routing.module';
     CommonModule,
     HomeRoutingModule,
     SharedModule,
-    DeviceDetectorModule
+    DeviceDetectorModule.forRoot()
   ],
   exports: [
     MainComponent

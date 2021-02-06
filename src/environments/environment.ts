@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  BACKEND_URL: 'http://localhost:8000',
+  BACKEND_URL: 'http://localhost:3000',
   MAX_FILE_SIZE: 10000000
 };
 
